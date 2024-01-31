@@ -29,8 +29,8 @@ public class Main {
 
                 int timeZoneDifference = getTimeZoneDifference(departureCity, arrivalCity);
 
-                int adaptedDepartureTime = (departureTime + timeZoneDifference) % 24;
-                int arrivalTime = (adaptedDepartureTime + duration) % 24;
+                int adaptedDepartureTime = (departureTime) % 24;
+                int arrivalTime = (adaptedDepartureTime + duration + timeZoneDifference) % 24;
 
                 JsonNode departureWeather = forecast.get(departureCity).get(adaptedDepartureTime);
 
